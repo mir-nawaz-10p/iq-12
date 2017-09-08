@@ -1,3 +1,10 @@
-<p>
-  search works!
-</p>
+<div id="search-component">
+  <h4>User Search</h4>
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <div>
+    <div *ngFor="let list of lists"
+         (click)="gotoDetail(list)" class="search-result" >
+      {{list.login}}
+    </div>
+  </div>
+</div>

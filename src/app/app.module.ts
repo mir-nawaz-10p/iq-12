@@ -11,6 +11,7 @@ import { DetailComponent } from './detail/detail.component';
 
 import { ListService } from './list/list.service';
 import { DetailService } from './detail/detail.service';
+import { SearchService } from './search/search.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DetailService } from './detail/detail.service';
   ],
   providers: [
     ListService,
-    DetailService
+    DetailService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })
