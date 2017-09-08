@@ -1,7 +1,12 @@
 <h2>Users list</h2>
 <ul class="heroes">
     <li *ngFor="let list of lists">
-      	<span>{{list.id}}</span> 
-      	<span>{{list.name}}</span>
+      	<span class="padding-10">{{list.id}}</span> 
+      	<span class="padding-10">
+        	<img class="width-40" [src]="list.avatar_url">
+    	</span>
+      	<span class="padding-10">{{list.login}}</span>
+      	<span class="padding-10">{{list.repos_url}}</span>
+      	<span><button (click)="gotoDetail(list)">View Details</button></span>
     </li>
 </ul>

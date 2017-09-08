@@ -16,10 +16,6 @@ export class AppComponent {
     {
       route: '/search',
       title: 'Search'
-    },
-    {
-      route: '/details',
-      title: 'Details'
     }
   ];
 }

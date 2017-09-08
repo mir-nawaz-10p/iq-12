@@ -1,3 +1,22 @@
-<p>
-  detail works!
-</p>
+<div>
+	<dir>
+		<span>ID: </span>
+		<span>{{list.id}}</span>
+	</dir>
+	<dir>
+		<span>Name: </span>
+		<span>{{list.login}}</span>
+	</dir>
+	<dir>
+		<span>Picture:</span>
+		<span><img class="width-100" [src]="list.avatar_url"></span>
+	</dir>
+	<dir>
+		<span>URL:</span>
+		<span>{{list.url}}</span>
+	</dir>
+	<dir>
+		<span>Repo: </span>
+		<span>{{list.repos_url}}</span>
+	</dir>
+</div>

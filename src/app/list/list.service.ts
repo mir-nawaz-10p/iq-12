@@ -2,27 +2,21 @@ import { Injectable } from '@angular/core';
 
 import { List } from './list';
 
+import { Http } from '@angular/http';
+
 @Injectable()
-export class ListService {
-  private list : List[] = [
-      { id: 0, name: 'Mr. Nice' },
-      { id: 1, name: 'Narco' },
-      { id: 2, name: 'Bombasto' },
-      { id: 3, name: 'Celeritas' },
-      { id: 4, name: 'Magneta' },
-      { id: 5, name: 'RubberMan' },
-      { id: 6, name: 'Dynama' },
-      { id: 7, name: 'Dr IQ' },
-      { id: 8, name: 'Magma' },
-      { id: 9, name: 'Tornado' }
-    ];
+export class ListService  {
+
+  constructor(private http: Http) {};
+
+  private list  = [];
 
   private wildCardSearch(str: string, rule: string) : boolean{
     return new RegExp("^" + rule.split("*").join(".*") + "$").test(str);
   }
 
-  getList(): List[] {
-    return this.list;
+  getList(): any {
+    return this.http.get("https://api.github.com/users");
   }
 
   getById(id: number): List {

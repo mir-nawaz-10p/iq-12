@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { List } from './list';
 import { ListService } from './list.service';
@@ -12,14 +13,23 @@ export class ListComponent implements OnInit {
   
   lists: List[];
 
-  constructor(private listService: ListService) { }
+  constructor(
+    private listService: ListService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.getList();
   }
   
   getList(): void {
-    this.lists = this.listService.getList();
+    this.listService.getList()
+    .subscribe((res)=>{
+            this.lists = res.json();
+        });
   }
 
+  gotoDetail(list:Object):void{
+    this.router.navigate(['/details', list['login']]);
+  }
 }

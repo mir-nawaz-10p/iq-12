@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { DetailComponent } from './detail/detail.component';
 
 import { ListService } from './list/list.service';
+import { DetailService } from './detail/detail.service';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,12 @@ import { ListService } from './list/list.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [
-    ListService
+    ListService,
+    DetailService
   ],
   bootstrap: [AppComponent]
 })

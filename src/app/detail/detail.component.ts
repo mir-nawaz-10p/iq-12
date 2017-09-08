@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DetailService } from './detail.service';
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  list: any;
+
+  constructor(
+  	private DetailService: DetailService
+  	) { }
 
   ngOnInit() {
+  	this.DetailService.getUserDetails("mojombo")
+    .subscribe((res)=>{
+            this.list = res.json();
+        });
   }
 
 }
